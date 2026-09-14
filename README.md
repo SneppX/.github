@@ -16,4 +16,8 @@ Open-core AI ecosystem built around the `sneppx-alg` framework.
 MIT open core + commercial tiers (enterprise/cloud/edge licenses) and paid
 services (audits, certification).
 
-Generated skeleton - status: WIP.
+## Sponsoring
+See [SPONSORING.md](SPONSORING.md) for tiers. Sponsor buttons are enabled on
+all public repositories.
+
+Status: WIP.
