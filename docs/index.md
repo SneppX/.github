@@ -1,0 +1,3 @@
+# .github
+
+Skeleton documentation (WIP).
