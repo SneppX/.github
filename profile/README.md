@@ -8,7 +8,6 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 |---|---|
 | [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework (tensor engine, autograd, moe/ssm, quantization, distributed training, 10-layer security) |
 | sneppx-shield | AI security & compliance suite (SBOM, signed models, compliance reports) |
-| sneppx-cloud | Managed training & inference platform (private) |
 | sneppx-forge | Verified model registry & marketplace |
 | sneppx-dist | Distributed training CLI |
 | sneppx-edge | On-device inference SDK |
