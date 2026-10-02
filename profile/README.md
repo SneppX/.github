@@ -29,7 +29,7 @@ all public repositories.
 - sneppx-dist: platform backend detection (nccl/gloo), TCP `check`, launcher rendering (bash/powershell).
 - sneppx-edge: symmetric + per-channel uint8 quantize, batched inference (`infer-batch`).
 - sneppx-audits: multi-target evidence merge, SBOM digest discovery, JSON schema, GitHub Action.
-- sneppx-academy: Modules 03 (distributed) and 04 (security) published with validated examples.
+- sneppx-academy: Module 01 published (tensor engine); Modules 02-04 drafted.
 
 ### 2027 Q1
 - sneppx-alg: v0.2 4-bit quantization runtime, true forward-mode tangent engine, C NCCL verify on real toolchain.
