@@ -1,0 +1,19 @@
+# CODEOWNERS for SneppX organization
+
+# Core security and crypto modules are owned by the shield team
+src/sneppx_shield/* @sneppx/shield-team
+
+# Distributed training and cluster management
+src/sneppx_dist/* @sneppx/dist-team
+
+# Model registry and forge operations
+src/sneppx_forge/* @sneppx/forge-team
+
+# Academy and educational content
+docs/modules/* @sneppx/academy-team
+
+# Audit and compliance tooling
+src/sneppx_audits/* @sneppx/audits-team
+
+# Default organization-wide ownership
+* @sneppx/org-leads
