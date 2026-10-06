@@ -14,13 +14,6 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 | sneppx-academy | Certification & courses |
 | sneppx-audits | AI security audit & consulting services |
 | sneppx-website | Organization site |
-| sneppx-cloud | Managed training & inference platform (private, Dockerized FastAPI) |
-| sneppx-dist-pro | Priority node scheduler (private) |
-| sneppx-edge-fleet | Device telemetry + OTA rollout management (private) |
-| sneppx-studio | Web IDE + experiment tracking (private) |
-| sneppx-shield-pro | Enterprise AI Act audit packs (private) |
-| sneppx-forge-enterprise | Private registry: RBAC + sealed key escrow (private) |
-| sneppx-academy-pro | Paid certifications with signed credentials (private) |
 | sneppx-hub | Public signed-model index (syncs from forge) |
 | sneppx-bench | SneppX vs NumPy/PyTorch benchmark harness |
 | sneppx-kernels | Reference GEMM/INT8 kernels |
@@ -56,12 +49,10 @@ all public repositories.
 - sneppx-website: interactive docs, changelog, newsletter.
 
 ### 2027 Q2
-- sneppx-cloud (private): managed training/inference platform MVP.
 - Trade/audit practice: ISO 42001 / EU AI Act readiness reports as a service.
 
 ## Talks / contributing
 
-Every repo has its own license: public repos are MIT, `sneppx-cloud`, the
-`*-pro` tier, and `sneppx-edge-fleet`/`sneppx-studio` are proprietary. Open
+All public repos are MIT-licensed. Open
 issues and pull requests are welcome on public repos; security findings go to
 [sneppx-audits](https://github.com/SneppX/sneppx-audits).
