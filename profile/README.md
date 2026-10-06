@@ -22,6 +22,15 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 | sneppx-cli-docs | MkDocs CLI reference (gh-deploy ready) |
 | sneppx-agents-public | Curated OpenCode agent personalities |
 | sneppx-templates | train/serve/edge starter templates |
+| sneppx-registry | Public signed-model browser (forge/hub UI) |
+| sneppx-tune | Auto-hyperparameter tuning harness |
+| sneppx-serve | Model serving: batching, KV cache, streaming |
+| sneppx-eval | Public eval harness and leaderboard |
+| sneppx-safe | Adversarial/safety eval suite |
+| sneppx-rl | RLHF/DPO/GRPO training loops library |
+| sneppx-convert | Universal model converter (HF/SneppX/ONNX) |
+| sneppx-monitor | Training telemetry dashboards |
+| sneppx-edu-labs | Lab environments per academy module |
 
 ## Support SneppX
 

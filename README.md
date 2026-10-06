@@ -13,6 +13,7 @@ Open-core AI ecosystem built around the `sneppx-alg` framework.
 - sneppx-website - org marketing site
 - sneppx-hub / sneppx-bench / sneppx-kernels / sneppx-datasets - growth/infra libs
 - sneppx-playground / sneppx-cli-docs / sneppx-agents-public / sneppx-templates - docs & dev-UX
+- sneppx-registry / sneppx-tune / sneppx-serve / sneppx-eval / sneppx-safe / sneppx-rl / sneppx-convert / sneppx-monitor / sneppx-edu-labs - serving, eval, tuning, conversion, labs
 
 ## Monetization
 MIT open core with paid services (audits, certification).
