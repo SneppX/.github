@@ -2,7 +2,7 @@
 
 Open-core AI ecosystem built around the `sneppx-alg` framework.
 
-## Products
+## Products (public/core)
 - [sneppx-alg](https://github.com/SneppX/sneppx-alg) - universal open-source AI algorithm framework
 - sneppx-shield - AI security & compliance suite
 - sneppx-forge - verified model registry
@@ -11,6 +11,12 @@ Open-core AI ecosystem built around the `sneppx-alg` framework.
 - sneppx-academy - certification & courses
 - sneppx-audits - audit & consulting services
 - sneppx-website - org marketing site
+- sneppx-hub / sneppx-bench / sneppx-kernels / sneppx-datasets - growth/infra libs
+- sneppx-playground / sneppx-cli-docs / sneppx-agents-public / sneppx-templates - docs & dev-UX
+
+## Commercial tiers (private)
+- sneppx-cloud, sneppx-dist-pro, sneppx-edge-fleet, sneppx-studio
+- sneppx-shield-pro, sneppx-forge-enterprise, sneppx-academy-pro
 
 ## Monetization
 MIT open core + commercial tiers (enterprise/cloud/edge licenses) and paid
