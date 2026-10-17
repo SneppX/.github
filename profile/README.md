@@ -2,66 +2,59 @@
 
 Open-core AI ecosystem: secure, auditable, distributed AI.
 
-## Product family
+## Repositories
 
 | Repo | What it is |
 |---|---|
-| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework (tensor engine, autograd, moe/ssm, quantization, distributed training, 10-layer security) |
-| sneppx-shield | AI security & compliance suite (SBOM, signed models, compliance reports) |
-| sneppx-forge | Verified model registry & marketplace |
-| sneppx-dist | Distributed training CLI |
-| sneppx-edge | On-device inference SDK |
-| sneppx-academy | Certification & courses |
-| sneppx-audits | AI security audit & consulting services |
-| sneppx-website | Organization site |
-| sneppx-hub | Public signed-model index (syncs from forge) |
-| sneppx-bench | SneppX vs NumPy/PyTorch benchmark harness |
-| sneppx-kernels | Reference GEMM/INT8 kernels |
-| sneppx-datasets | Toy datasets for demos |
-| sneppx-playground | Notebook templates |
-| sneppx-cli-docs | MkDocs CLI reference (gh-deploy ready) |
-| sneppx-agents-public | Curated OpenCode agent personalities |
-| sneppx-templates | train/serve/edge starter templates |
-| sneppx-registry | Public signed-model browser (forge/hub UI) |
-| sneppx-tune | Auto-hyperparameter tuning harness |
-| sneppx-serve | Model serving: batching, KV cache, streaming |
-| sneppx-eval | Public eval harness and leaderboard |
-| sneppx-safe | Adversarial/safety eval suite |
-| sneppx-rl | RLHF/DPO/GRPO training loops library |
-| sneppx-convert | Universal model converter (HF/SneppX/ONNX) |
-| sneppx-monitor | Training telemetry dashboards |
-| sneppx-edu-labs | Lab environments per academy module |
+| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack |
+| [SneppX-Editor](https://github.com/SneppX/SneppX-Editor) | SneppX IDE — a VS Code-based editor for the SneppX workflow |
+| [linux](https://github.com/SneppX/linux) | Linux kernel source tree |
+
+## sneppx-alg
+
+The core of the organization: ~183K LOC of C11 + C++20 + x86_64 ASM + CUDA with
+Python bindings (`SneppX_ALG`, MIT-licensed).
+
+- **Pipeline**: HSS (state-space SSM) → SER (MoE routing) → ARC (adversarial
+  guard) → NPE (16-register neural VM, 32 opcodes) → FM (federated / fractal
+  memory)
+- **Security (10 layers, S0–S9)**: post-quantum crypto (Kyber / Dilithium /
+  SPHINCS+, FIPS 203/204/205), memory hardening, obfuscation, monitoring,
+  network security, AI sanitizer, key vault, secure updates, formal
+  verification, pentesting
+- **Capabilities**: tensor engine + autograd (40+ ops, higher-order AD),
+  optimizers (SGD / AdamW / RAdam / Schedule-Free), trainer, inference engine,
+  quantization (INT8 / INT4 / FP8 / AWQ / GPTQ), distributed training (ZeRO-1/2/3,
+  pipeline / tensor / expert parallelism, FSDP, elastic), model zoo with
+  `from_pretrained()` for LLaMA 2/3, Mistral, Qwen2, DeepSeek V2
+- **Tooling**: 6 CLI tools — `sneppx-train`, `sneppx-serve`, `sneppx-experiment`,
+  `sneppx-eval`, `sneppx-quantize`, `sneppx-rlhf` — plus FastAPI serving
+
+Docs: https://sneppx.github.io/sneppx-alg/
 
 ## Support SneppX
 
 SneppX is built in the open. If the stack helps you, sponsor the work:
-`SPONSORING.md` in this repo describes tiers. Sponsor buttons are enabled on
-all public repositories.
+[`SPONSORING.md`](https://github.com/SneppX/.github/blob/main/SPONSORING.md)
+describes tiers. Sponsor buttons are enabled on public repositories.
 
 ## Roadmap
 
 ### 2026 Q4 (shipped in v0.1.0)
-- sneppx-shield: real Ed25519 signing, SBOM CLI (`--recursive`/`--no-hash`), `audit --ci` annotations, key-rotation docs.
-- sneppx-forge: signed model registry + REST API (Bearer auth), Docker Compose server, remote `verify --remote`.
-- sneppx-dist: platform backend detection (nccl/gloo), TCP `check`, launcher rendering (bash/powershell).
-- sneppx-edge: symmetric + per-channel uint8 quantize, batched inference (`infer-batch`).
-- sneppx-audits: multi-target evidence merge, SBOM digest discovery, JSON schema, GitHub Action.
-- sneppx-academy: Module 01 published (tensor engine); Modules 02-04 drafted.
-- All 14 services/products now ship Dockerized FastAPI apps + tests; every Python package carries `__version__` and per-file pytest.
+- sneppx-alg: tensor engine, autograd with higher-order AD, `nn` / `optim` /
+  loss libraries, sparse tensors, state-dict serialization, CTC loss,
+  quantization, distributed collectives, and the Python `F.*` functional
+  namespace.
 
 ### 2027 Q1
-- sneppx-alg: v0.2 4-bit quantization runtime, true forward-mode tangent engine, C NCCL verify on real toolchain.
-- sneppx-shield: Dilithium (PQ) signing backend, SBOM attestation format, OCI registry support.
-- sneppx-forge: marketplace UI, model download distribution (signed blobs), license keys.
-- sneppx-edge: per-device licensing daemon, Vulkan/Metal backends, 4-bit inference.
-- sneppx-academy: certification with signed certificates end-to-end, enterprise training tier.
-- sneppx-website: interactive docs, changelog, newsletter.
+- sneppx-alg: v0.2 4-bit quantization runtime, true forward-mode tangent engine,
+  C NCCL verification on a real toolchain.
 
 ### 2027 Q2
 - Trade/audit practice: ISO 42001 / EU AI Act readiness reports as a service.
 
 ## Talks / contributing
 
-All public repos are MIT-licensed. Open
-issues and pull requests are welcome on public repos; security findings go to
-[sneppx-audits](https://github.com/SneppX/sneppx-audits).
+`sneppx-alg` is MIT-licensed. Open issues and pull requests are welcome.
+Security findings should be reported privately via the security advisories on
+[sneppx-alg](https://github.com/SneppX/sneppx-alg/security/advisories/new).
