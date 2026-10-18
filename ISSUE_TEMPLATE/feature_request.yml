@@ -1,0 +1,58 @@
+name: Feature request
+description: Suggest an idea or capability for a SneppX repository.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Maintainer time is limited — the fastest
+        path to something landing is a pull request (see
+        [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md)).
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repository
+      description: Which SneppX repository is this for?
+      placeholder: sneppx-alg
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do that is currently hard or impossible?
+      placeholder: I need to ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: How you imagine it working. API sketch is welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds or other libraries you looked at.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, prior art, benchmarks, or screenshots.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing open **and** closed issues and did not find this
+          required: true
+        - label: I am willing to help implement or test this
