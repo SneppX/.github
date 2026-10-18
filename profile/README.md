@@ -7,8 +7,8 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 | Repo | What it is |
 |---|---|
 | [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack |
-| [SneppX-Editor](https://github.com/SneppX/SneppX-Editor) | SneppX IDE — a VS Code-based editor for the SneppX workflow |
-| [linux](https://github.com/SneppX/linux) | Linux kernel source tree |
+| [linux](https://github.com/SneppX/linux) | Linux kernel source tree — kept for systems-level work and kernel-module experiments |
+| [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
 
 ## sneppx-alg
 
