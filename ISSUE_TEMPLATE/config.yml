@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/SneppX/sneppx-alg/security/advisories/new
+    about: Report security issues privately. Please do not open a public issue.
+  - name: Documentation
+    url: https://sneppx.github.io/sneppx-alg/
+    about: Framework docs, API reference, and build instructions.
+  - name: Support policy
+    url: https://github.com/SneppX/.github/blob/main/SUPPORT.md
+    about: What we can and cannot help with, and response expectations.
+  - name: Sponsor SneppX
+    url: https://github.com/SneppX/.github/blob/main/SPONSORING.md
+    about: Sponsor tiers and one-time contributions.
+  - name: Code of Conduct
+    url: https://github.com/SneppX/.github/blob/main/CODE_OF_CONDUCT.md
+    about: Community standards and enforcement.
