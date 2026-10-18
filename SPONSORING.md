@@ -1,7 +1,7 @@
 # Sponsoring SneppX
 
 SneppX is an open-core organization. The MIT core is free forever; your support
-funds maintenance, security work, and the free public learning content.
+funds maintenance, security work, and the documentation.
 
 Sponsor buttons are enabled on all public repos and route to the account that
 runs this work. Tiers below are suggestions - every contribution counts.
@@ -20,14 +20,14 @@ runs this work. Tiers below are suggestions - every contribution counts.
 ## Where the money goes
 
 1. Maintenance of `sneppx-alg` (security fixes, audit follow-ups).
-2. Free `sneppx-academy` course content.
+2. Documentation, learning material, and worked examples for the framework.
 3. Compute for CI and releases.
 
 ## One-time / services
 
 Prefer a one-off or a paid engagement?
 
-- AI framework security audit (see `sneppx-audits`).
+- AI framework security audit and threat modelling.
 - Feature sponsorship: "you pay, we implement it in the core".
 
 You can also contribute via GitHub Sponsors (button on repo pages) or open a
