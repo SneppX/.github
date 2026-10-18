@@ -7,18 +7,10 @@ Thanks for your interest in contributing to the SneppX ecosystem! This document 
 | Repo | Purpose | Language |
 |------|---------|----------|
 | `sneppx-alg` | Core DL framework (tensor, autograd, nn, optim, distributed, security) | C11/C++20 + Python |
-| `sneppx-shield` | AI security & compliance (SBOM, signatures, compliance reports) | Python |
-| `sneppx-forge` | Verified model registry & marketplace | Python |
-| `sneppx-dist` | Distributed training CLI | Python |
-| `sneppx-edge` | On-device inference SDK | Python |
-| `sneppx-academy` | Certification & courses | Markdown + Python |
-| `sneppx-audits` | Security audit & consulting | Python |
-| `sneppx-cloud` | Managed training/inference platform | Python |
-| `sneppx-website` | Organization site | HTML/CSS/JS |
 
 ## Development Setup
 
-### Python repos (shield, forge, dist, edge, audits, cloud)
+### Python repositories
 
 ```powershell
 # Clone and install in editable mode
@@ -54,13 +46,13 @@ python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
 
 ## Testing
 
-- **Per-file pytest only** — the full test suite hangs on this machine
+- **Per-file pytest only** — runs fast on any machine; a full-suite run can hang on low-core / low-memory setups
 - Run: `python -m pytest tests/python/test_<module>.py -q -p no:cacheprovider`
 - Safe test list in `sneppx-alg/AGENTS.md`
 
 ## License
 
-All repos are MIT-licensed open core. Commercial/enterprise tiers are sold separately for `sneppx-cloud` and `sneppx-edge`.
+All repositories are MIT-licensed open core.
 
 ## Questions?
 
