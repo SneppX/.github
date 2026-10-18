@@ -1,19 +1,21 @@
-# CODEOWNERS for SneppX organization
+# CODEOWNERS for the SneppX/.github repository
+#
+# NOTE: CODEOWNERS is a per-repository file — it does NOT apply org-wide.
+# The rules below only auto-assign reviewers for THIS repository.
 
-# Core security and crypto modules are owned by the shield team
-src/sneppx_shield/* @sneppx/shield-team
+* @ammar49-cyber
 
-# Distributed training and cluster management
-src/sneppx_dist/* @sneppx/dist-team
+# Org profile + community-health files
+profile/README.md @ammar49-cyber
+README.md @ammar49-cyber
+SECURITY.md @ammar49-cyber
+CODE_OF_CONDUCT.md @ammar49-cyber
+SUPPORT.md @ammar49-cyber
+CONTRIBUTING.md @ammar49-cyber
+SPONSORING.md @ammar49-cyber
+FUNDING.yml @ammar49-cyber
+ISSUE_TEMPLATE/ @ammar49-cyber
+PULL_REQUEST_TEMPLATE.md @ammar49-cyber
 
-# Model registry and forge operations
-src/sneppx_forge/* @sneppx/forge-team
-
-# Academy and educational content
-docs/modules/* @sneppx/academy-team
-
-# Audit and compliance tooling
-src/sneppx_audits/* @sneppx/audits-team
-
-# Default organization-wide ownership
-* @sneppx/org-leads
+# Default workflows inherited by repos without their own
+.github/workflows/ @ammar49-cyber
