@@ -1,0 +1,47 @@
+# Org default: Python lint (ruff).
+#
+# Inherited by repositories in this org that do NOT define their own
+# .github/workflows/ folder. Non-blocking by design: it skips repos with no
+# Python files, and ruff runs with --exit-zero so it can never fail a build.
+
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      python: ${{ steps.check.outputs.python }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: check
+        run: |
+          if find . -name '*.py' -not -path './.git/*' -print -quit | grep -q .; then
+            echo "python=true" >> "$GITHUB_OUTPUT"
+            echo "Python files detected - ruff will run."
+          else
+            echo "python=false" >> "$GITHUB_OUTPUT"
+            echo "No Python files - skipping ruff."
+          fi
+
+  ruff:
+    needs: detect
+    if: needs.detect.outputs.python == 'true'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ruff
+        run: pip install --quiet ruff
+      - name: Run ruff
+        run: ruff check --output-format=github --exit-zero .
