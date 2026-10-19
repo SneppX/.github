@@ -7,3 +7,21 @@ requires-python = ">=3.10"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# Consumed by the org-default `lint.yml` workflow (and any local `ruff check`).
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [".opencode", "node_modules"]
+
+[tool.ruff.lint]
+# E/W pycodestyle · F pyflakes · I import order · B bugbear · UP pyupgrade
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = [
+    # Line length is enforced by the formatter, not the linter, so prose-heavy
+    # assertion messages don't trip it.
+    "E501",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["sneppx"]
