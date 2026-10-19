@@ -49,7 +49,7 @@ def test_yaml_files_discovered() -> None:
     rels = [_rel(p) for p in _yaml_files()]
     assert ".github/workflows/lint.yml" in rels
     assert ".github/workflows/secret-scan.yml" in rels
-    assert ".github/workflows/welcome.yml" in rels
+    assert ".github/workflows/stale.yml" in rels
     assert "ISSUE_TEMPLATE/bug_report.yml" in rels
     assert "ISSUE_TEMPLATE/feature_request.yml" in rels
     assert "ISSUE_TEMPLATE/config.yml" in rels
@@ -63,7 +63,7 @@ def test_all_yaml_parses() -> None:
 
 def test_expected_workflows_exist() -> None:
     names = {p.stem for p in WORKFLOW_DIR.glob("*.yml")}
-    assert names == {"lint", "secret-scan", "license-check", "welcome"}, names
+    assert names == {"lint", "secret-scan", "license-check", "welcome", "stale"}, names
 
 
 def test_workflow_trigger_present() -> None:
