@@ -1,0 +1,41 @@
+# Org default: welcome first-time contributors.
+#
+# Inherited by repositories in this org that do NOT define their own
+# .github/workflows/ folder. Posts a one-time greeting on a user's first
+# issue and first pull request. Non-blocking by design.
+
+name: welcome
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            👋 Thanks for opening your first issue in SneppX!
+
+            A maintainer will triage it shortly. In the meantime, please make
+            sure you've searched existing (open and closed) issues, and that
+            you're not reporting a security vulnerability (those go through
+            [SECURITY.md](https://github.com/SneppX/.github/blob/main/SECURITY.md)).
+
+            Happy to have you here.
+          pr-message: |
+            👋 Thanks for your first pull request to SneppX!
+
+            A maintainer will review it. Please make sure CI is green and that
+            your commit messages follow the `<area>: <description>` convention
+            (see [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md)).
+            Welcome aboard!

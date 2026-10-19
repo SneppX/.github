@@ -49,7 +49,7 @@ def test_yaml_files_discovered() -> None:
     rels = [_rel(p) for p in _yaml_files()]
     assert ".github/workflows/lint.yml" in rels
     assert ".github/workflows/secret-scan.yml" in rels
-    assert ".github/workflows/license-check.yml" in rels
+    assert ".github/workflows/welcome.yml" in rels
     assert "ISSUE_TEMPLATE/bug_report.yml" in rels
     assert "ISSUE_TEMPLATE/feature_request.yml" in rels
     assert "ISSUE_TEMPLATE/config.yml" in rels
@@ -63,7 +63,7 @@ def test_all_yaml_parses() -> None:
 
 def test_expected_workflows_exist() -> None:
     names = {p.stem for p in WORKFLOW_DIR.glob("*.yml")}
-    assert names == {"lint", "secret-scan", "license-check"}, names
+    assert names == {"lint", "secret-scan", "license-check", "welcome"}, names
 
 
 def test_workflow_trigger_present() -> None:
@@ -81,9 +81,7 @@ def test_workflow_jobs_have_runs_on() -> None:
         for job_name, job in wf.get("jobs", {}).items():
             assert job_name and job, f"{_rel(path)}: empty job {job_name!r}"
             assert "runs-on" in job, f"{_rel(path)}: job {job_name!r} has no runs-on"
-            assert "steps" in job and job["steps"], (
-                f"{_rel(path)}: job {job_name!r} has no steps"
-            )
+            assert "steps" in job and job["steps"], f"{_rel(path)}: job {job_name!r} has no steps"
 
 
 def test_workflow_steps_valid() -> None:
@@ -94,9 +92,7 @@ def test_workflow_steps_valid() -> None:
                 where = f"{_rel(path)}: job {job_name!r} step {i}"
                 assert isinstance(step, dict), where
                 # Every step needs an action to run or shell to execute.
-                assert ("uses" in step) or ("run" in step), (
-                    f"{where} has neither `uses` nor `run`"
-                )
+                assert ("uses" in step) or ("run" in step), f"{where} has neither `uses` nor `run`"
 
 
 def test_issue_forms_have_required_shape() -> None:
@@ -105,9 +101,7 @@ def test_issue_forms_have_required_shape() -> None:
         form = _load(path)
         for key in ("name", "description", "body"):
             assert key in form, f"{_rel(path)} is missing `{key}`"
-        assert isinstance(form["body"], list) and form["body"], (
-            f"{_rel(path)}: body empty"
-        )
+        assert isinstance(form["body"], list) and form["body"], f"{_rel(path)}: body empty"
 
 
 def test_issue_form_blocks_are_known() -> None:
@@ -116,9 +110,7 @@ def test_issue_form_blocks_are_known() -> None:
         for i, block in enumerate(form["body"]):
             where = f"{_rel(ISSUE_DIR / name)} body[{i}]"
             assert "type" in block, f"{where} has no `type`"
-            assert block["type"] in FORM_TYPES, (
-                f"{where}: unknown type {block['type']!r}"
-            )
+            assert block["type"] in FORM_TYPES, f"{where}: unknown type {block['type']!r}"
             assert "attributes" in block, f"{where} has no `attributes`"
 
 
@@ -144,9 +136,7 @@ def test_issue_template_config_shape() -> None:
     assert isinstance(links, list) and links, "config.yml needs contact_links"
     for i, link in enumerate(links):
         assert link.get("name"), f"contact_links[{i}] missing name"
-        assert link.get("url", "").startswith("http"), (
-            f"contact_links[{i}] missing a valid url"
-        )
+        assert link.get("url", "").startswith("http"), f"contact_links[{i}] missing a valid url"
         assert link.get("about"), f"contact_links[{i}] missing about"
 
 
