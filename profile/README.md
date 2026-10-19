@@ -6,7 +6,7 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 
 | Repo | What it is |
 |---|---|
-| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack |
+| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.1) |
 | [linux](https://github.com/SneppX/linux) | Linux kernel source tree — kept for systems-level work and kernel-module experiments |
 | [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
 
@@ -40,17 +40,25 @@ describes tiers. Sponsor buttons are enabled on public repositories.
 
 ## Roadmap
 
-### 2026 Q4 (shipped in v0.1.0)
+### Shipped (v1.5.1, 2026-10-19)
+
 - sneppx-alg: tensor engine, autograd with higher-order AD, `nn` / `optim` /
   loss libraries, sparse tensors, state-dict serialization, CTC loss,
   quantization, distributed collectives, and the Python `F.*` functional
   namespace.
+- sneppx-alg: 10 security layers (S0–S9), post-quantum crypto, signed updates,
+  formal verification, model zoo presets, HTTP REST API, 300+ tests.
+- Org: community health 100%, GitHub Sponsors enabled, default workflows
+  (license-check, lint, secret-scan).
+
+### 2026 Q4
+
+- sneppx-alg: true forward-mode tangent engine, C NCCL verification on a real
+  toolchain, FIPS KAT validation for PQC, Linux/macOS build polish.
+- Org: first external contributors onboarded via `good first issue` program.
 
 ### 2027 Q1
-- sneppx-alg: v0.2 4-bit quantization runtime, true forward-mode tangent engine,
-  C NCCL verification on a real toolchain.
 
-### 2027 Q2
 - Trade/audit practice: ISO 42001 / EU AI Act readiness reports as a service.
 
 ## Talks / contributing
