@@ -7,6 +7,11 @@ Thanks for your interest in contributing to the SneppX ecosystem! This document 
 | Repo | Purpose | Language |
 |------|---------|----------|
 | `sneppx-alg` | Core DL framework (tensor, autograd, nn, optim, distributed, security) | C11/C++20 + Python |
+| `SneppX/.github` | Org profile, community-health files, default workflows | Markdown / YAML |
+
+All repositories under `SneppX/*` are MIT-licensed open core and follow the same
+contribution standards described here. Per-repo specifics (build commands, test
+commands, coding conventions) live in each repo's own `AGENTS.md` / `README.md`.
 
 ## Development Setup
 
