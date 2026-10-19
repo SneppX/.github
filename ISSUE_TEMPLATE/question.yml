@@ -1,0 +1,44 @@
+name: Question
+description: Ask a question about using a SneppX repository.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check the [docs](https://sneppx.github.io/sneppx-alg/) and
+        [Discussions](https://github.com/SneppX/sneppx-alg/discussions) first —
+        many questions are already answered there.
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repository
+      description: Which SneppX repository is this about?
+      placeholder: sneppx-alg
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What are you trying to do, and what's blocking you?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Commands, code snippets, or links to docs you already read.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing open and closed issues and discussions
+          required: true
+        - label: This is not a security vulnerability (those go via SECURITY.md)
+          required: true
