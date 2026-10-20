@@ -51,7 +51,7 @@ python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
 
 ## Testing
 
-- **Per-file pytest only** — runs fast on any machine; a full-suite run can hang on low-core / low-memory setups
+- **Per-file pytest only** — runs fast on any machine; a full-suite run can be slow on resource-constrained setups
 - Run: `python -m pytest tests/python/test_<module>.py -q -p no:cacheprovider`
 - Safe test list in `sneppx-alg/AGENTS.md`
 
