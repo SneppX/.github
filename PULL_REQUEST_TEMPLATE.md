@@ -25,10 +25,15 @@ python -m pytest tests/python/test_<module>.py -q -p no:cacheprovider
 ## Checklist
 
 - [ ] I ran the relevant tests and they pass
-- [ ] Changes are additive  - " no existing public API was renamed or removed
+- [ ] Changes are additive — no existing public API was renamed or removed
 - [ ] No secrets, keys, or credentials are included
-- [ ] Commit messages follow `<area>: <description>`
+- [ ] Commit messages follow conventional commits format (`<type>(<scope>): <description>`)
+- [ ] CHANGELOG.md updated if this introduces a user-visible feature or fix
 - [ ] I read [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md)
+
+## Screenshots / UI Progressions (if applicable)
+
+<!-- Include before/after screenshots or terminal output recordings for UI/CLI changes -->
 
 ## Notes for the reviewer
 
