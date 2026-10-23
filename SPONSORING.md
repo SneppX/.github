@@ -37,7 +37,7 @@ funding-request issue in the relevant repository.
 
 Recent community and sponsor-supported milestones in `v1.5.x`:
 - **Complete Tensor & Autograd Engine:** Higher-order automatic differentiation, custom forward/backward graphs, and full NumPy/C bridge.
-- **10-Layer Security Stack (S0–S9):** Formal verification proofs, post-quantum crypto primitives, memory protection, and threat analyzers.
+- **10-Layer Security Stack (S0 - "S9):** Formal verification proofs, post-quantum crypto primitives, memory protection, and threat analyzers.
 - **Documentation & Playground:** Interactive browser playground with client-side Pyodide runtime, extensive API explorer, and migration guides.
 - **Model Zoo & Quantization:** Standardized implementations for state-space and transformer architectures with INT8/INT4 quantization.
 

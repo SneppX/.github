@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement by contacting the
-organization owner privately via GitHub (<https://github.com/ammar49-cyber> —
+organization owner privately via GitHub (<https://github.com/ammar49-cyber>  - "
 use the profile contact form) or by opening a private security advisory on the
 affected repository.
 

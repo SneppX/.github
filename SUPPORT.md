@@ -9,7 +9,7 @@ Thanks for using SneppX.
 | Bug or unexpected behaviour | Open a **bug report** in the affected repository |
 | Feature idea | Open a **feature request** in the affected repository |
 | Usage / "how do I..." | Open an issue, or use the repo's discussions if enabled |
-| Security vulnerability | **Private only** — see [SECURITY.md](SECURITY.md). Do **not** open a public issue |
+| Security vulnerability | **Private only**  - " see [SECURITY.md](SECURITY.md). Do **not** open a public issue |
 | Sponsorship / commercial work | See [SPONSORING.md](SPONSORING.md) |
 
 ## Before you ask
@@ -28,7 +28,7 @@ Thanks for using SneppX.
 
 ## Response time
 
-This is a volunteer-driven open-source project — expect days rather than hours.
+This is a volunteer-driven open-source project  - " expect days rather than hours.
 
 ## Contributing
 
@@ -68,7 +68,7 @@ Run per-file only:
 python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
 ```
 LLM inference tests (`test_llama_models.py`, `test_inference_server.py`)
-**must not be run** on machines without a GPU � they will hang.
+**must not be run** on machines without a GPU  - " they will hang.
 
 ### Build fails with "CUDA not found"
 

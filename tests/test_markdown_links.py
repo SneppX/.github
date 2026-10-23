@@ -104,3 +104,15 @@ def test_no_absolute_windows_or_file_paths() -> None:
         if re.search(r"[A-Za-z]:\\\\|file://", text):
             offenders.append(_rel(path))
     assert not offenders, "Non-portable absolute paths in:\n  " + "\n  ".join(offenders)
+
+
+def test_cross_reference_content() -> None:
+    profile = (ROOT / "profile" / "README.md").read_text(encoding="utf-8")
+    assert "sneppx.github.io/sneppx-alg" in profile, "profile must link to docs site"
+
+    contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+    assert "SECURITY.md" in contributing or "security" in contributing.lower(), "CONTRIBUTING must mention security"
+
+    support = (ROOT / "SUPPORT.md").read_text(encoding="utf-8")
+    assert "CONTRIBUTING.md" in support, "SUPPORT must reference CONTRIBUTING.md"
+

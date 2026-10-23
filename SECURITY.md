@@ -9,7 +9,7 @@ releases exist, `main` is the only supported line.
 | Component | Supported |
 |-----------|-----------|
 | `sneppx-alg` (`main`) | ‚úÖ |
-| Older tags and third-party forks | ‚ùå |
+| Older tags and third-party forks |  - " -  |
 
 ## Reporting a Vulnerability
 
@@ -69,13 +69,13 @@ an LTS branch is declared.
 3. Fill in the title, description, and affected version (use `main` if unsure).
 4. Include: affected module / file path, reproduction steps, impact assessment,
    and any suggested fix or mitigation.
-5. Submit ó you will receive an acknowledgement within **5 business days**.
+5. Submit  - " you will receive an acknowledgement within **5 business days**.
 
 ## What qualifies as a security issue?
 
 **Security issues** (use private advisory):
 - Remote code execution, privilege escalation, or authentication bypass
-- Cryptographic weaknesses in the S0ñS9 security layers
+- Cryptographic weaknesses in the S0-S9 security layers
 - Memory safety issues (buffer overflow, use-after-free) with exploitation potential
 - Credential or key material leakage
 
@@ -91,5 +91,5 @@ SneppX supports good-faith security research. If you act in good faith to:
 - Report promptly and allow reasonable time to fix before disclosure
 - Not exploit the vulnerability beyond what is needed to demonstrate it
 
-Öthen SneppX will not pursue legal action against you and will publicly
+ - then SneppX will not pursue legal action against you and will publicly
 acknowledge your contribution (unless you prefer anonymity).

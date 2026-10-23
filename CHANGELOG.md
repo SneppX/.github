@@ -11,7 +11,7 @@ All notable changes to the SneppX org community-health repository.
 ## [0.3.0] - 2026-10-18
 ### Changed
 - docs(contributing): rephrase machine-specific note
-- chore(workflows): bump gitleaks 8.21.2 → 8.30.1
+- chore(workflows): bump gitleaks 8.21.2  - ' 8.30.1
 - docs(contributing): note org-wide scope and per-repo specifics
 
 ## [0.2.0] - 2026-10-17
