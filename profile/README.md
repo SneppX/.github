@@ -6,19 +6,19 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 
 | Repo | What it is |
 |---|---|
-| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA  - " tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.2) |
-| [linux](https://github.com/SneppX/linux) | Linux kernel source tree  - " kept for systems-level work and kernel-module experiments |
-| [.github](https://github.com/SneppX/.github) | This repo  - " organization profile, community-health files, and default workflows |
+| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.2) |
+| [linux](https://github.com/SneppX/linux) | Linux kernel source tree — kept for systems-level work and kernel-module experiments |
+| [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
 
 ## sneppx-alg
 
 The core of the organization: ~183K LOC of C11 + C++20 + x86_64 ASM + CUDA with
 Python bindings (`SneppX_ALG`, MIT-licensed).
 
-- **Pipeline**: HSS (state-space SSM)  - ' SER (MoE routing)  - ' ARC (adversarial
-  guard)  - ' NPE (16-register neural VM, 32 opcodes)  - ' FM (federated / fractal
+- **Pipeline**: HSS (state-space SSM) → SER (MoE routing) → ARC (adversarial
+  guard) → NPE (16-register neural VM, 32 opcodes) → FM (federated / fractal
   memory)
-- **Security (10 layers, S0 - "S9)**: post-quantum crypto (Kyber / Dilithium /
+- **Security (10 layers, S0–S9)**: post-quantum crypto (Kyber / Dilithium /
   SPHINCS+, FIPS 203/204/205), memory hardening, obfuscation, monitoring,
   network security, AI sanitizer, key vault, secure updates, formal
   verification, pentesting
@@ -27,8 +27,8 @@ Python bindings (`SneppX_ALG`, MIT-licensed).
   quantization (INT8 / INT4 / FP8 / AWQ / GPTQ), distributed training (ZeRO-1/2/3,
   pipeline / tensor / expert parallelism, FSDP, elastic), model zoo with
   `from_pretrained()` for LLaMA 2/3, Mistral, Qwen2, DeepSeek V2
-- **Tooling**: 6 CLI tools  - " `sneppx-train`, `sneppx-serve`, `sneppx-experiment`,
-  `sneppx-eval`, `sneppx-quantize`, `sneppx-rlhf`  - " plus FastAPI serving
+- **Tooling**: 6 CLI tools — `sneppx-train`, `sneppx-serve`, `sneppx-experiment`,
+  `sneppx-eval`, `sneppx-quantize`, `sneppx-rlhf` — plus FastAPI serving
 
 Docs: https://sneppx.github.io/sneppx-alg/
 
@@ -46,7 +46,7 @@ describes tiers. Sponsor buttons are enabled on public repositories.
   loss libraries, sparse tensors, state-dict serialization, CTC loss,
   quantization, distributed collectives, and the Python `F.*` functional
   namespace.
-- sneppx-alg: 10 security layers (S0 - "S9), post-quantum crypto, signed updates,
+- sneppx-alg: 10 security layers (S0–S9), post-quantum crypto, signed updates,
   formal verification, model zoo presets, HTTP REST API, 300+ tests.
 - sneppx-alg: site UX improvements (smooth scroll, TOC highlight, keyboard
   shortcuts, back-to-top), playground localStorage persistence, contributing
@@ -64,8 +64,10 @@ describes tiers. Sponsor buttons are enabled on public repositories.
 
 - Trade/audit practice: ISO 42001 / EU AI Act readiness reports as a service.
 
-## Talks / contributing
+## Contributing
 
-`sneppx-alg` is MIT-licensed. Open issues and pull requests are welcome.
-Security findings should be reported privately via the security advisories on
-[sneppx-alg](https://github.com/SneppX/sneppx-alg/security/advisories/new).
+All repositories under `SneppX/*` are MIT-licensed open core. Issues and pull requests are welcome.
+
+- Read [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md) to get started
+- Browse [`good first issue`](https://github.com/SneppX/sneppx-alg/labels/good%20first%20issue) labels for beginner-friendly tasks
+- Security findings: report privately via [security advisories](https://github.com/SneppX/sneppx-alg/security/advisories/new)
