@@ -33,6 +33,13 @@ body:
       label: What have you tried?
       description: Commands, code snippets, or links to docs you already read.
 
+  - type: textarea
+    id: code
+    attributes:
+      label: Relevant Code Snippet
+      description: Minimal code example demonstrating the problem or question (optional).
+      render: python
+
   - type: checkboxes
     id: checks
     attributes:
