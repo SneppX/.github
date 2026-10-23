@@ -6,7 +6,7 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 
 | Repo | What it is |
 |---|---|
-| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.1) |
+| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.2) |
 | [linux](https://github.com/SneppX/linux) | Linux kernel source tree — kept for systems-level work and kernel-module experiments |
 | [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
 
@@ -40,7 +40,7 @@ describes tiers. Sponsor buttons are enabled on public repositories.
 
 ## Roadmap
 
-### Shipped (v1.5.1, 2026-10-19)
+### Shipped (v1.5.2, 2026-10-23)
 
 - sneppx-alg: tensor engine, autograd with higher-order AD, `nn` / `optim` /
   loss libraries, sparse tensors, state-dict serialization, CTC loss,
@@ -48,6 +48,9 @@ describes tiers. Sponsor buttons are enabled on public repositories.
   namespace.
 - sneppx-alg: 10 security layers (S0–S9), post-quantum crypto, signed updates,
   formal verification, model zoo presets, HTTP REST API, 300+ tests.
+- sneppx-alg: site UX improvements (smooth scroll, TOC highlight, keyboard
+  shortcuts, back-to-top), playground localStorage persistence, contributing
+  docs page.
 - Org: community health 100%, GitHub Sponsors enabled, default workflows
   (license-check, lint, secret-scan).
 
