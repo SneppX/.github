@@ -34,3 +34,62 @@ This is a volunteer-driven open-source project â€” expect days rather than hours
 
 The fastest way to get something fixed is a pull request.
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Common Issues
+
+### PYTHONPATH not set
+
+**Symptom:** `ModuleNotFoundError: No module named 'SneppX_ALG'`
+
+**Fix:**
+```powershell
+$env:PYTHONPATH = "bindings/python"
+python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
+```
+
+### ImportError for SneppX_ALG
+
+**Symptom:** ImportError even after setting PYTHONPATH.
+
+**Fix:** Verify the path is correct relative to the repo root. The package
+lives at `bindings/python/SneppX_ALG/`. Run from the repo root:
+```powershell
+$env:PYTHONPATH = "bindings/python"
+python -c "import SneppX_ALG; print('OK')"
+```
+
+### Tests hang or take too long
+
+**Symptom:** `python -m pytest tests/python/` hangs after a few tests.
+
+**Fix:** Never run the full test suite at once on a CPU-only machine.
+Run per-file only:
+```powershell
+python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
+```
+LLM inference tests (`test_llama_models.py`, `test_inference_server.py`)
+**must not be run** on machines without a GPU — they will hang.
+
+### Build fails with "CUDA not found"
+
+**Symptom:** CMake errors about missing CUDA toolkit.
+
+**Fix:** CUDA is optional. For CPU-only builds:
+```powershell
+cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DSNEPPX_CUDA=OFF
+```
+
+### `ruff check` fails on pre-commit
+
+**Symptom:** pre-commit hook rejects the commit.
+
+**Fix:** Run ruff locally first:
+```powershell
+ruff check --fix .
+```
+
+## Response time
+
+This is a volunteer-driven open-source project.
+Expect responses in **days rather than hours**. PRs with a fix attached
+are typically reviewed faster. For critical security issues, see [SECURITY.md](SECURITY.md).
