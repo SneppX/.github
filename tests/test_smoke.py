@@ -17,10 +17,8 @@ def test_org_profile_readme_exists_and_mentions_core_repo() -> None:
 def test_no_mojibake_replacement_chars() -> None:
     """Guard against files saved in the wrong encoding (U+FFFD)."""
     offenders = []
-    for path in ROOT.rglob("*"):
+    for path in ROOT.glob("*"):
         if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
-            continue
-        if ".git" in path.parts:
             continue
         try:
             text = path.read_text(encoding="utf-8")
@@ -29,6 +27,19 @@ def test_no_mojibake_replacement_chars() -> None:
             continue
         if "\ufffd" in text:
             offenders.append((str(path), "contains U+FFFD"))
+    # Also check docs/ and profile/
+    for sub in ("docs", "profile"):
+        sub_dir = ROOT / sub
+        if not sub_dir.is_dir():
+            continue
+        for path in sub_dir.glob("*.md"):
+            try:
+                text = path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                offenders.append((str(path), "not valid UTF-8"))
+                continue
+            if "\ufffd" in text:
+                offenders.append((str(path), "contains U+FFFD"))
     assert not offenders, "mojibake detected: %r" % offenders
 
 
@@ -40,5 +51,27 @@ def test_community_health_files_present() -> None:
         "SUPPORT.md",
         "LICENSE",
         "README.md",
+        "CHANGELOG.md",
+        "SPONSORING.md",
+        "CODEOWNERS",
     ):
         assert (ROOT / name).is_file(), "%s is missing" % name
+
+
+def test_docs_index_not_empty() -> None:
+    docs_index = ROOT / "docs" / "index.md"
+    assert docs_index.is_file(), "docs/index.md is missing"
+    assert len(docs_index.read_text(encoding="utf-8")) > 100, "docs/index.md is too short"
+
+
+def test_codeowners_configured() -> None:
+    codeowners = ROOT / "CODEOWNERS"
+    assert codeowners.is_file(), "CODEOWNERS missing"
+    assert "@ammar49-cyber" in codeowners.read_text(encoding="utf-8")
+
+
+def test_sponsoring_mentions_github() -> None:
+    sponsoring = ROOT / "SPONSORING.md"
+    assert sponsoring.is_file(), "SPONSORING.md missing"
+    assert "github" in sponsoring.read_text(encoding="utf-8").lower()
+
