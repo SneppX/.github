@@ -93,3 +93,4 @@ SneppX supports good-faith security research. If you act in good faith to:
 
  - then SneppX will not pursue legal action against you and will publicly
 acknowledge your contribution (unless you prefer anonymity).
+
