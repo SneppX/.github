@@ -30,3 +30,5 @@ All notable changes to the SneppX org community-health repository.
 - bug_report.yml and feature_request.yml issue forms
 - lint.yml, secret-scan.yml, license-check.yml default workflows
 - FUNDING.yml (GitHub Sponsors)
+
+
