@@ -71,3 +71,4 @@ All repositories under `SneppX/*` are MIT-licensed open core. Issues and pull re
 - Read [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md) to get started
 - Browse [`good first issue`](https://github.com/SneppX/sneppx-alg/labels/good%20first%20issue) labels for beginner-friendly tasks
 - Security findings: report privately via [security advisories](https://github.com/SneppX/sneppx-alg/security/advisories/new)
+
