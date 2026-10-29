@@ -93,3 +93,4 @@ ruff check --fix .
 This is a volunteer-driven open-source project.
 Expect responses in **days rather than hours**. PRs with a fix attached
 are typically reviewed faster. For critical security issues, see [SECURITY.md](SECURITY.md).
+
