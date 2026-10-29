@@ -51,3 +51,5 @@ Enterprise sponsors receive private communication channels, SLA-backed response 
 
 ### How can I request an invoice or alternative payment method?
 Open a private security advisory or contact `algoSNEPPX@gmail.com` for corporate invoicing, procurement details, or tailored service agreements.
+
+
