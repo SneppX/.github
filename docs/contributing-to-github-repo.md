@@ -32,3 +32,5 @@ python -c "import sys; sys.path.append('tests'); import test_smoke, test_templat
 - Use Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, `test:`).
 - Verify all relative markdown links resolve using `test_markdown_links.py`.
 - Update `CHANGELOG.md` for notable changes.
+
+
