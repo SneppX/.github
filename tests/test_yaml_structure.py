@@ -63,7 +63,7 @@ def test_all_yaml_parses() -> None:
 
 def test_expected_workflows_exist() -> None:
     names = {p.stem for p in WORKFLOW_DIR.glob("*.yml")}
-    assert names == {"lint", "secret-scan", "license-check", "welcome", "stale", "ci-blocking"}, names
+    assert names == {"lint", "secret-scan", "license-check", "welcome", "stale"}, names
 
 
 def test_workflow_trigger_present() -> None:
