@@ -7,8 +7,10 @@ Open-core AI ecosystem: secure, auditable, distributed AI.
 | Repo | What it is |
 |---|---|
 | [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.2) |
-| [linux](https://github.com/SneppX/linux) | Linux kernel source tree — kept for systems-level work and kernel-module experiments |
+| [sneppxov](https://github.com/SneppX/sneppxov) | Static showcase website for sneppx-alg (GitHub Pages) |
 | [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
+
+> Note: `SneppX/linux` exists as a separate fork for systems-level work and is intentionally excluded from the core SneppX roadmap and audit scope.
 
 ## sneppx-alg
 
@@ -37,38 +39,3 @@ Docs: https://sneppx.github.io/sneppx-alg/
 SneppX is built in the open. If the stack helps you, sponsor the work:
 [`SPONSORING.md`](https://github.com/SneppX/.github/blob/main/SPONSORING.md)
 describes tiers. Sponsor buttons are enabled on public repositories.
-
-## Roadmap
-
-### Shipped (v1.5.2, 2026-10-23)
-
-- sneppx-alg: tensor engine, autograd with higher-order AD, `nn` / `optim` /
-  loss libraries, sparse tensors, state-dict serialization, CTC loss,
-  quantization, distributed collectives, and the Python `F.*` functional
-  namespace.
-- sneppx-alg: 10 security layers (S0–S9), post-quantum crypto, signed updates,
-  formal verification, model zoo presets, HTTP REST API, 300+ tests.
-- sneppx-alg: site UX improvements (smooth scroll, TOC highlight, keyboard
-  shortcuts, back-to-top), playground localStorage persistence, contributing
-  docs page.
-- Org: community health 100%, GitHub Sponsors enabled, default workflows
-  (license-check, lint, secret-scan).
-
-### 2026 Q4
-
-- sneppx-alg: true forward-mode tangent engine, C NCCL verification on a real
-  toolchain, FIPS KAT validation for PQC, Linux/macOS build polish.
-- Org: first external contributors onboarded via `good first issue` program.
-
-### 2027 Q1
-
-- Trade/audit practice: ISO 42001 / EU AI Act readiness reports as a service.
-
-## Contributing
-
-All repositories under `SneppX/*` are MIT-licensed open core. Issues and pull requests are welcome.
-
-- Read [CONTRIBUTING.md](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md) to get started
-- Browse [`good first issue`](https://github.com/SneppX/sneppx-alg/labels/good%20first%20issue) labels for beginner-friendly tasks
-- Security findings: report privately via [security advisories](https://github.com/SneppX/sneppx-alg/security/advisories/new)
-
