@@ -1,8 +1,9 @@
 # Org default: license check.
 #
-# Inherited by repositories in this org that do NOT define their own
-# .github/workflows/ folder. Fails if the repo has no LICENSE file at the
-# root, so MIT open-core stays explicit across the org.
+# NOTE: Ordinary workflows in this repository are NOT automatically inherited
+# by other repositories. Only community-health files are inherited. Repositories
+# that want this check must either define their own workflow or call a reusable
+# workflow explicitly.
 
 name: license-check
 
@@ -22,10 +23,12 @@ jobs:
 
       - name: Check for a LICENSE file
         run: |
-          shopt -s nullglob
-          files=(LICENSE LICENSE.md LICENSE.txt COPYING COPYING.md)
-          if [ "${#files[@]}" -eq 0 ]; then
+          found=""
+          for f in LICENSE LICENSE.md LICENSE.txt COPYING COPYING.md; do
+            if [ -f "$f" ]; then found="$found $f"; fi
+          done
+          if [ -z "$found" ]; then
             echo "::error::No LICENSE file found at the repository root."
             exit 1
           fi
-          echo "Found: ${files[*]}"
+          echo "Found:$found"
