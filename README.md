@@ -17,7 +17,7 @@ Organization profile: [profile/README.md](profile/README.md).
 - `CONTRIBUTING.md`, `SPONSORING.md`, `LICENSE`, `FUNDING.yml`
 - `.github/workflows/`  — Workflow examples; repositories must copy or call reusable workflows explicitly
   (lint, secret scan, license check)
-- `CODEOWNERS`  - " review ownership for **this** repo only (CODEOWNERS is per-repo,
+- `CODEOWNERS`  — Review ownership for **this** repo only (CODEOWNERS is per-repo,
   not org-wide)
 
 ## Monetization
