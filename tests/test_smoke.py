@@ -40,7 +40,7 @@ def test_no_mojibake_replacement_chars() -> None:
                 continue
             if "\ufffd" in text:
                 offenders.append((str(path), "contains U+FFFD"))
-    assert not offenders, "mojibake detected: %r" % offenders
+    assert not offenders, f"mojibake detected: {offenders!r}"
 
 
 def test_community_health_files_present() -> None:
@@ -55,7 +55,7 @@ def test_community_health_files_present() -> None:
         "SPONSORING.md",
         "CODEOWNERS",
     ):
-        assert (ROOT / name).is_file(), "%s is missing" % name
+        assert (ROOT / name).is_file(), f"{name} is missing"
 
 
 def test_docs_index_not_empty() -> None:
