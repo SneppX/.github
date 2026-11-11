@@ -15,7 +15,7 @@ Organization profile: [profile/README.md](profile/README.md).
 - Community-health files (org-wide): `SECURITY.md`, `CODE_OF_CONDUCT.md`,
   `SUPPORT.md`, `ISSUE_TEMPLATE/`, `PULL_REQUEST_TEMPLATE.md`
 - `CONTRIBUTING.md`, `SPONSORING.md`, `LICENSE`, `FUNDING.yml`
-- `.github/workflows/`  — Default workflow templates for repositories that explicitly add them
+- `.github/workflows/`  — Workflow examples; repositories must copy or call reusable workflows explicitly
   (lint, secret scan, license check)
 - `CODEOWNERS`  - " review ownership for **this** repo only (CODEOWNERS is per-repo,
   not org-wide)
