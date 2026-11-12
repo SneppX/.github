@@ -17,7 +17,7 @@ Organization profile: [profile/README.md](profile/README.md).
   `SUPPORT.md`, `ISSUE_TEMPLATE/`, `PULL_REQUEST_TEMPLATE.md`
 - `CONTRIBUTING.md`, `SPONSORING.md`, `LICENSE`, `FUNDING.yml`
 - `.github/workflows/`  — Workflow examples; GitHub does not inherit them. Copy them into each repository, or refactor them into reusable workflows with `workflow_call`.
-  (lint, secret scan, license check)
+  (lint, secret scan, license check, repository tests)
 - `CODEOWNERS`  — Review ownership for **this** repo only (CODEOWNERS is per-repo,
   not org-wide)
 
