@@ -103,6 +103,26 @@ def test_pull_request_target_workflows_do_not_execute_untrusted_checkout() -> No
                 )
 
 
+def test_workflows_declare_least_privilege_token_permissions() -> None:
+    """Every workflow must opt into explicit, narrowly scoped GITHUB_TOKEN access."""
+    for path in WORKFLOW_DIR.glob("*.yml"):
+        workflow = _load(path)
+        permissions = workflow.get("permissions")
+        assert isinstance(permissions, dict) and permissions, (
+            f"{_rel(path)} must declare explicit top-level permissions"
+        )
+        for scope, access in permissions.items():
+            assert access in {"read", "write", "none"}, (
+                f"{_rel(path)} has invalid permission level {scope}={access!r}"
+            )
+        write_scopes = {
+            scope for scope, access in permissions.items() if access == "write"
+        }
+        assert write_scopes <= {"issues", "pull-requests"}, (
+            f"{_rel(path)} grants unexpected write permissions: {write_scopes}"
+        )
+
+
 def test_workflow_steps_valid() -> None:
     for path in WORKFLOW_DIR.glob("*.yml"):
         wf = _load(path)
