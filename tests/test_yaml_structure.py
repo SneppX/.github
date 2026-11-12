@@ -87,6 +87,23 @@ def test_workflow_jobs_have_runs_on() -> None:
 
 
 
+
+def test_external_actions_are_pinned_to_commit_shas() -> None:
+    """Prevent mutable action tags from changing workflow code without review."""
+    for path in WORKFLOW_DIR.glob("*.yml"):
+        workflow = _load(path)
+        for job_name, job in workflow.get("jobs", {}).items():
+            for index, step in enumerate(job.get("steps", [])):
+                action = str(step.get("uses", ""))
+                if not action or action.startswith("./"):
+                    continue
+                ref = action.rsplit("@", 1)[-1] if "@" in action else ""
+                assert re.fullmatch(r"[0-9a-f]{40}", ref), (
+                    f"{_rel(path)}: job {job_name!r} step {index} "
+                    f"must pin {action!r} to a full commit SHA"
+                )
+
+
 def test_gitleaks_release_archive_is_checksum_verified() -> None:
     """Verify the pinned scanner archive before executing its binary."""
     workflow = _load(WORKFLOW_DIR / "secret-scan.yml")
