@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Repos that exist in github.com/SneppX as of 2026-10-18.
-LIVE_REPOS = {".github", "sneppx-alg", "linux", "demo-repository"}
+LIVE_REPOS = {".github", "sneppx-alg", "sneppxov", "linux", "demo-repository"}
 
 # Removed from the org on 2026-10-17. Any reference to these is a bug.
 DEAD_REPOS = {
