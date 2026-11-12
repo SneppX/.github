@@ -84,6 +84,22 @@ def test_workflow_jobs_have_runs_on() -> None:
             assert "steps" in job and job["steps"], f"{_rel(path)}: job {job_name!r} has no steps"
 
 
+
+def test_checkout_steps_do_not_persist_github_credentials() -> None:
+    """Checkout steps should not leave the workflow token in local Git config."""
+    for path in WORKFLOW_DIR.glob("*.yml"):
+        workflow = _load(path)
+        for job_name, job in workflow.get("jobs", {}).items():
+            for index, step in enumerate(job.get("steps", [])):
+                action = str(step.get("uses", "")).lower()
+                if action.startswith("actions/checkout@"):
+                    checkout = step.get("with", {})
+                    assert checkout.get("persist-credentials") is False, (
+                        f"{_rel(path)}: job {job_name!r} step {index} "
+                        "must set persist-credentials: false"
+                    )
+
+
 def test_pull_request_target_workflows_do_not_execute_untrusted_checkout() -> None:
     """Privileged PR-target workflows must not run code from contributor branches."""
     for path in WORKFLOW_DIR.glob("*.yml"):

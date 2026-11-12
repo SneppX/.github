@@ -20,6 +20,8 @@ jobs:
       python: ${{ steps.check.outputs.python }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - id: check
         run: |
           if find . -name '*.py' -not -path './.git/*' -print -quit | grep -q .; then
