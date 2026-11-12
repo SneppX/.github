@@ -7,6 +7,7 @@ Organization profile: [profile/README.md](profile/README.md).
 
 ## Repositories
 - [sneppx-alg](https://github.com/SneppX/sneppx-alg)  — Universal open-source AI algorithm framework (C/C++ & CUDA + Python bindings)
+- [sneppxov](https://github.com/SneppX/sneppxov)  — Public project website and reference catalog for SneppX-Alg
 - [linux](https://github.com/SneppX/linux)  — Linux kernel source tree (fork, kept for systems work)
 - [.github](https://github.com/SneppX/.github)  — This repository: organization profile and defaults
 
