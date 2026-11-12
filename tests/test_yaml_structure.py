@@ -88,6 +88,38 @@ def test_workflow_jobs_have_runs_on() -> None:
 
 
 
+
+def test_job_permissions_cannot_expand_workflow_permissions() -> None:
+    """Job-level token grants must be no broader than the workflow grant."""
+    for path in WORKFLOW_DIR.glob("*.yml"):
+        workflow = _load(path)
+        workflow_permissions = workflow.get("permissions", {})
+        workflow_writes = {
+            scope for scope, access in workflow_permissions.items()
+            if access == "write"
+        }
+        for job_name, job in workflow.get("jobs", {}).items():
+            permissions = job.get("permissions")
+            if permissions is None:
+                continue
+            assert isinstance(permissions, dict), (
+                f"{_rel(path)}: job {job_name!r} permissions must be a mapping"
+            )
+            for scope, access in permissions.items():
+                assert access in {"read", "write", "none"}, (
+                    f"{_rel(path)}: job {job_name!r} has invalid "
+                    f"permission {scope}={access!r}"
+                )
+            job_writes = {
+                scope for scope, access in permissions.items()
+                if access == "write"
+            }
+            assert job_writes <= workflow_writes, (
+                f"{_rel(path)}: job {job_name!r} expands token write scopes "
+                f"from {workflow_writes} to {job_writes}"
+            )
+
+
 def test_external_actions_are_pinned_to_commit_shas() -> None:
     """Prevent mutable action tags from changing workflow code without review."""
     for path in WORKFLOW_DIR.glob("*.yml"):
