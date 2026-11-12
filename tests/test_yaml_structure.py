@@ -84,6 +84,25 @@ def test_workflow_jobs_have_runs_on() -> None:
             assert "steps" in job and job["steps"], f"{_rel(path)}: job {job_name!r} has no steps"
 
 
+def test_pull_request_target_workflows_do_not_execute_untrusted_checkout() -> None:
+    """Privileged PR-target workflows must not run code from contributor branches."""
+    for path in WORKFLOW_DIR.glob("*.yml"):
+        workflow = _load(path)
+        trigger = workflow.get("on", workflow.get(True))
+        if not isinstance(trigger, dict) or "pull_request_target" not in trigger:
+            continue
+        for job_name, job in workflow.get("jobs", {}).items():
+            for index, step in enumerate(job.get("steps", [])):
+                where = f"{_rel(path)}: job {job_name!r} step {index}"
+                action = str(step.get("uses", "")).lower()
+                assert not action.startswith("actions/checkout@"), (
+                    f"{where} checks out code in a privileged pull_request_target workflow"
+                )
+                assert "run" not in step, (
+                    f"{where} executes shell code in a privileged pull_request_target workflow"
+                )
+
+
 def test_workflow_steps_valid() -> None:
     for path in WORKFLOW_DIR.glob("*.yml"):
         wf = _load(path)
