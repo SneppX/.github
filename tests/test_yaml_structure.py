@@ -9,6 +9,7 @@ the parts GitHub cares about.
 from __future__ import annotations
 
 from pathlib import Path
+import re
 from typing import Any
 
 import yaml
@@ -83,6 +84,22 @@ def test_workflow_jobs_have_runs_on() -> None:
             assert "runs-on" in job, f"{_rel(path)}: job {job_name!r} has no runs-on"
             assert "steps" in job and job["steps"], f"{_rel(path)}: job {job_name!r} has no steps"
 
+
+
+
+def test_gitleaks_release_archive_is_checksum_verified() -> None:
+    """Verify the pinned scanner archive before executing its binary."""
+    workflow = _load(WORKFLOW_DIR / "secret-scan.yml")
+    install = next(
+        step for step in workflow["jobs"]["gitleaks"]["steps"]
+        if step.get("name") == "Install gitleaks"
+    )
+    env = install.get("env", {})
+    digest = env.get("GITLEAKS_SHA256", "")
+    assert re.fullmatch(r"[0-9a-f]{64}", digest), "Gitleaks SHA-256 must be pinned"
+    command = install.get("run", "")
+    assert "sha256sum --check --strict -" in command
+    assert command.index("sha256sum --check --strict -") < command.index("tar -xzf")
 
 
 def test_checkout_steps_do_not_persist_github_credentials() -> None:
