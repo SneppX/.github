@@ -43,3 +43,7 @@ From the repository root, install the package or set the source path. The packag
 CUDA is optional for a CPU-only build. Follow the current build guide in the affected repository and disable the CUDA option when configuring CMake.
 
 Do not share API tokens, private keys, passwords, or unredacted environment dumps in public issues.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, testing, and contribution expectations.

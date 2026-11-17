@@ -25,3 +25,11 @@ Contributions are welcome. Read the shared [contribution guide](https://github.c
 ## Security
 
 Please report suspected vulnerabilities privately. See the [SneppX security policy](https://github.com/SneppX/.github/blob/main/SECURITY.md).
+
+## Roadmap
+
+Project priorities and implementation status are tracked in the individual repositories. Start with the [SneppX-ALG issue tracker](https://github.com/SneppX/sneppx-alg/issues) for current work.
+
+## Support and sponsorship
+
+For help, read the [support guide](https://github.com/SneppX/.github/blob/main/SUPPORT.md). Sponsorship information is available in [SPONSORING.md](https://github.com/SneppX/.github/blob/main/SPONSORING.md).
