@@ -1,96 +1,55 @@
 # Security Policy
 
-## Supported Versions
+SneppX takes vulnerability reports seriously. Please disclose suspected vulnerabilities privately so maintainers can investigate before technical details become public.
 
-Security fixes land on the `main` branch of
-[`sneppx-alg`](https://github.com/SneppX/sneppx-alg). Until tagged LTS
-releases exist, `main` is the only supported line.
+## Supported versions
 
-| Component | Supported |
-|-----------|-----------|
-| `sneppx-alg` (`main`) | ✅ |
-| Older tags and third-party forks |  - " -  |
+Security fixes are currently developed against the main branch of [SneppX-ALG](https://github.com/SneppX/sneppx-alg). No backport or long-term-support schedule is promised for older releases.
 
-## Reporting a Vulnerability
+| Version or source | Security support |
+|---|---|
+| main | Best-effort fixes and review |
+| Published release tags | No guaranteed backports |
+| Third-party forks | Maintained by their respective owners |
 
-**Please do NOT open a public issue for a security vulnerability.**
+A component's presence in the repository does not imply that it has undergone an independent security audit or is suitable for production deployment. Review the component documentation and validation status before relying on it.
 
-Report privately with GitHub's advisory form:
-<https://github.com/SneppX/sneppx-alg/security/advisories/new>
+## Report a vulnerability privately
 
-Include:
+Use [GitHub's private security advisory form](https://github.com/SneppX/sneppx-alg/security/advisories/new) for SneppX-ALG vulnerabilities.
 
-- Affected repository / module / file path
-- Impact and a minimal reproduction
-- Suggested fix or mitigation, if you have one
-- Your preferred credit name (or "no credit")
+Please include, where possible:
 
-### What to expect
+- Affected repository, version, component, and file path.
+- Impact and realistic attack conditions.
+- Minimal reproduction steps or proof of concept.
+- Suggested mitigation, if known.
+- Whether and how you would like to be credited.
+
+Do not open a public issue or discussion containing exploit details, credentials, personal information, or unpatched vulnerability information.
+
+## Triage and disclosure
+
+Reports are reviewed on a best-effort basis. The following are response targets, not service-level guarantees:
 
 | Stage | Target |
-|-------|--------|
-| Acknowledgement | within 5 working days |
-| Triage + initial assessment | within 10 working days |
-| Fix / mitigation | coordinated with the reporter, severity-dependent |
-| Disclosure | coordinated disclosure by default |
+|---|---|
+| Acknowledgement | Within 5 business days |
+| Initial triage | Within 10 business days |
+| Fix and disclosure | Coordinated with the reporter, based on severity and remediation needs |
+
+The maintainers will coordinate disclosure with the reporter where practical. Do not publish details before a fix or an agreed disclosure date.
 
 ## Scope
 
-**In scope:** code, build artifacts, and release artifacts under
-`github.com/SneppX/*`.
+Reports may cover security-relevant behaviour in code, build systems, and release artifacts maintained under the SneppX organization.
 
-**Out of scope:**
+Examples include memory-safety defects with a credible exploitation path, authentication or authorization bypasses, exposure of credentials or sensitive data, cryptographic implementation defects, unsafe update or artifact verification, and security controls that fail to enforce their documented guarantees.
 
-- Third-party forks kept for reference (e.g. [`linux`](https://github.com/SneppX/linux))
-- Vulnerabilities in upstream dependencies with no SneppX-specific trigger
-- Issues that require physical access, or local privilege escalation
-  without a SneppX-specific impact
-- Denial of service that depends on unrealistic resource exhaustion
+General numerical errors, incorrect gradients, ordinary build failures, and documentation mistakes should normally be reported through the affected project's public issue tracker unless they create a security impact.
 
-## Preferred Languages
+## Safe-harbor expectations
 
-English.
+Good-faith research is welcome. Researchers should avoid privacy violations, service disruption, and data destruction; access only the systems and data needed to demonstrate the issue; stop testing if sensitive data is encountered; and allow reasonable time for investigation and remediation before public disclosure.
 
-## Supported Versions Table
-
-| Version | Supported |
-|---------|-----------|
-| `sneppx-alg` 1.5.x (main) | ? Supported |
-| `sneppx-alg` < 1.5.0 | ? Not supported |
-| Third-party forks | ? Not supported |
-
-Security fixes are applied to `main` only. No backport releases are planned until
-an LTS branch is declared.
-
-## Step-by-step Private Disclosure
-
-1. **Do not** open a public GitHub issue or discussion.
-2. Navigate to the [GitHub Security Advisories form](https://github.com/SneppX/sneppx-alg/security/advisories/new).
-3. Fill in the title, description, and affected version (use `main` if unsure).
-4. Include: affected module / file path, reproduction steps, impact assessment,
-   and any suggested fix or mitigation.
-5. Submit  - " you will receive an acknowledgement within **5 business days**.
-
-## What qualifies as a security issue?
-
-**Security issues** (use private advisory):
-- Remote code execution, privilege escalation, or authentication bypass
-- Cryptographic weaknesses in the S0-S9 security layers
-- Memory safety issues (buffer overflow, use-after-free) with exploitation potential
-- Credential or key material leakage
-
-**Regular bugs** (open a public issue):
-- Wrong numerical output, incorrect gradient, broken test
-- Build failures, import errors, documentation mistakes
-- Performance regressions without a security impact
-
-## Safe Harbor
-
-SneppX supports good-faith security research. If you act in good faith to:
-- Avoid harm to users, systems, or data
-- Report promptly and allow reasonable time to fix before disclosure
-- Not exploit the vulnerability beyond what is needed to demonstrate it
-
- - then SneppX will not pursue legal action against you and will publicly
-acknowledge your contribution (unless you prefer anonymity).
-
+Maintainers will assess good-faith reports fairly and will not discourage responsible disclosure.

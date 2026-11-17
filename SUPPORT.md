@@ -1,96 +1,45 @@
 # Support
 
-Thanks for using SneppX.
+Use the channel that matches the problem.
 
-## Where to get help
+| Question | Where to go |
+|---|---|
+| Bug or unexpected behaviour | Open a bug report in the affected repository. |
+| Feature proposal | Open a feature request in the affected repository. |
+| Usage question | Check the project documentation, then open an issue or discussion if enabled. |
+| Security vulnerability | Use the private reporting process in [SECURITY.md](SECURITY.md). Do not publish vulnerability details in an issue. |
+| Sponsorship | Read [SPONSORING.md](SPONSORING.md). |
 
-| Question type | Where |
-|---------------|-------|
-| Bug or unexpected behaviour | Open a **bug report** in the affected repository |
-| Feature idea | Open a **feature request** in the affected repository |
-| Usage / "how do I..." | Open an issue, or use the repo's discussions if enabled |
-| Security vulnerability | **Private only**  - " see [SECURITY.md](SECURITY.md). Do **not** open a public issue |
-| Sponsorship / commercial work | See [SPONSORING.md](SPONSORING.md) |
+## Before opening an issue
 
-## Before you ask
+1. Read the documentation for the affected project.
+2. Search existing open and closed issues.
+3. Confirm the repository, branch, package version, and environment.
+4. Include a minimal reproduction and relevant error output. Remove credentials and other sensitive data.
 
-1. Read the docs: <https://sneppx.github.io/sneppx-alg/>
-2. Search existing issues (open **and** closed)
-3. Confirm you are on the latest `main`
+For SneppX-ALG, start with the [documentation](https://sneppx.github.io/sneppx-alg/) and [issue tracker](https://github.com/SneppX/sneppx-alg/issues).
 
-## What we can and cannot help with
+## What maintainers can help with
 
-- **Yes:** framework behaviour, API questions, build/runtime problems,
-  reproducible bugs, performance reports with a benchmark.
-- **No:** general deep-learning or PyTorch questions, help debugging your
-  model's accuracy, or bespoke feature requests with no broader maintainer
-  interest. SneppX is a small project.
+- Reproducible bugs in project code.
+- API behaviour and documented usage.
+- Build, packaging, and installation problems.
+- Performance reports with a reproducible benchmark.
 
-## Response time
+General model-training advice and requests for bespoke work may be outside the scope of a small volunteer-maintained project.
 
-This is a volunteer-driven open-source project  - " expect days rather than hours.
+## Response expectations
 
-## Contributing
+SneppX is maintained on a best-effort basis. Responses may take several days; no response-time guarantee is made.
 
-The fastest way to get something fixed is a pull request.
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+## Common SneppX-ALG setup checks
 
-## Common Issues
+### Python package import
 
-### PYTHONPATH not set
+From the repository root, install the package or set the source path. The package source is in bindings/python/SneppX_ALG/.
 
-**Symptom:** `ModuleNotFoundError: No module named 'SneppX_ALG'`
+### CPU-only native build
 
-**Fix:**
-```powershell
-$env:PYTHONPATH = "bindings/python"
-python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
-```
+CUDA is optional for a CPU-only build. Follow the current build guide in the affected repository and disable the CUDA option when configuring CMake.
 
-### ImportError for SneppX_ALG
-
-**Symptom:** ImportError even after setting PYTHONPATH.
-
-**Fix:** Verify the path is correct relative to the repo root. The package
-lives at `bindings/python/SneppX_ALG/`. Run from the repo root:
-```powershell
-$env:PYTHONPATH = "bindings/python"
-python -c "import SneppX_ALG; print('OK')"
-```
-
-### Tests hang or take too long
-
-**Symptom:** `python -m pytest tests/python/` hangs after a few tests.
-
-**Fix:** Never run the full test suite at once on a CPU-only machine.
-Run per-file only:
-```powershell
-python -m pytest tests/python/test_tensor.py -q -p no:cacheprovider
-```
-LLM inference tests (`test_llama_models.py`, `test_inference_server.py`)
-**must not be run** on machines without a GPU  - " they will hang.
-
-### Build fails with "CUDA not found"
-
-**Symptom:** CMake errors about missing CUDA toolkit.
-
-**Fix:** CUDA is optional. For CPU-only builds:
-```powershell
-cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DSNEPPX_CUDA=OFF
-```
-
-### `ruff check` fails on pre-commit
-
-**Symptom:** pre-commit hook rejects the commit.
-
-**Fix:** Run ruff locally first:
-```powershell
-ruff check --fix .
-```
-
-## Response time
-
-This is a volunteer-driven open-source project.
-Expect responses in **days rather than hours**. PRs with a fix attached
-are typically reviewed faster. For critical security issues, see [SECURITY.md](SECURITY.md).
-
+Do not share API tokens, private keys, passwords, or unredacted environment dumps in public issues.

@@ -1,41 +1,27 @@
 # SneppX
 
-Open-core AI ecosystem: secure, auditable, distributed AI.
+SneppX develops open-source software focused on algorithms, machine learning, developer tooling, and software security.
 
-## Repositories
+## Projects
 
-| Repo | What it is |
+| Project | Description |
 |---|---|
-| [sneppx-alg](https://github.com/SneppX/sneppx-alg) | Universal open-source AI algorithm framework in C/C++ & CUDA — tensor engine, autograd, MoE/SSM transformers, LLM model zoo (LLaMA / Mistral / Qwen / DeepSeek), quantization, distributed training, and a 10-layer AI security stack (v1.5.2) |
-| [sneppxov](https://github.com/SneppX/sneppxov) | Static showcase website for sneppx-alg (GitHub Pages) |
-| [.github](https://github.com/SneppX/.github) | This repo — organization profile, community-health files, and default workflows |
+| [SneppX-ALG](https://github.com/SneppX/sneppx-alg) | Native C/C++ project with Python bindings for tensor operations, automatic differentiation, neural-network components, and related research and developer tools. |
+| [SneppX-OV](https://github.com/SneppX/sneppxov) | Public project website with source-linked catalogues, architecture notes, and contributor information. |
+| [Organization defaults](https://github.com/SneppX/.github) | Community-health files and the SneppX organization profile. |
 
-> Note: `SneppX/linux` exists as a separate fork for systems-level work and is intentionally excluded from the core SneppX roadmap and audit scope.
+## SneppX-ALG resources
 
-## sneppx-alg
+- [Documentation](https://sneppx.github.io/sneppx-alg/)
+- [Source code](https://github.com/SneppX/sneppx-alg)
+- [Issues and bug reports](https://github.com/SneppX/sneppx-alg/issues)
+- [Release history](https://github.com/SneppX/sneppx-alg/releases)
+- [Project overview](https://sneppx.github.io/sneppxov/)
 
-The core of the organization: ~183K LOC of C11 + C++20 + x86_64 ASM + CUDA with
-Python bindings (`SneppX_ALG`, MIT-licensed).
+## Contributing
 
-- **Pipeline**: HSS (state-space SSM) → SER (MoE routing) → ARC (adversarial
-  guard) → NPE (16-register neural VM, 32 opcodes) → FM (federated / fractal
-  memory)
-- **Security (10 layers, S0–S9)**: post-quantum crypto (Kyber / Dilithium /
-  SPHINCS+, FIPS 203/204/205), memory hardening, obfuscation, monitoring,
-  network security, AI sanitizer, key vault, secure updates, formal
-  verification, pentesting
-- **Capabilities**: tensor engine + autograd (40+ ops, higher-order AD),
-  optimizers (SGD / AdamW / RAdam / Schedule-Free), trainer, inference engine,
-  quantization (INT8 / INT4 / FP8 / AWQ / GPTQ), distributed training (ZeRO-1/2/3,
-  pipeline / tensor / expert parallelism, FSDP, elastic), model zoo with
-  `from_pretrained()` for LLaMA 2/3, Mistral, Qwen2, DeepSeek V2
-- **Tooling**: 6 CLI tools — `sneppx-train`, `sneppx-serve`, `sneppx-experiment`,
-  `sneppx-eval`, `sneppx-quantize`, `sneppx-rlhf` — plus FastAPI serving
+Contributions are welcome. Read the shared [contribution guide](https://github.com/SneppX/.github/blob/main/CONTRIBUTING.md) and the development instructions in the repository you plan to change.
 
-Docs: https://sneppx.github.io/sneppx-alg/
+## Security
 
-## Support SneppX
-
-SneppX is built in the open. If the stack helps you, sponsor the work:
-[`SPONSORING.md`](https://github.com/SneppX/.github/blob/main/SPONSORING.md)
-describes tiers. Sponsor buttons are enabled on public repositories.
+Please report suspected vulnerabilities privately. See the [SneppX security policy](https://github.com/SneppX/.github/blob/main/SECURITY.md).
