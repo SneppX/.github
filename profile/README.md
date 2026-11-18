@@ -7,6 +7,7 @@ SneppX develops open-source software focused on algorithms, machine learning, de
 | Project | Description |
 |---|---|
 | [SneppX-ALG](https://github.com/SneppX/sneppx-alg) | Native C/C++ project with Python bindings for tensor operations, automatic differentiation, neural-network components, and related research and developer tools. |
+| [VSTodo](https://github.com/SneppX/vstodo) | Go-based version-control system exploring Git-compatible local workflows and remote collaboration. |
 | [SneppX-OV](https://github.com/SneppX/sneppxov) | Public project website with source-linked catalogues, architecture notes, and contributor information. |
 | [Organization defaults](https://github.com/SneppX/.github) | Community-health files and the SneppX organization profile. |
 
