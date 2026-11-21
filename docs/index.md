@@ -19,18 +19,21 @@ default GitHub workflows for all SneppX repositories.
 | `.github/workflows/` | Default org workflows (lint, secret-scan, stale, welcome) |
 | `.github/FUNDING.yml` | GitHub Sponsors configuration |
 
-## Default Workflows
+## Workflows in this repository
 
-Repositories in the SneppX org that do not define their own
-`.github/workflows/` inherit these workflows automatically:
+The workflows under `.github/workflows/` run only in `SneppX/.github`.
+GitHub does not automatically inherit ordinary Actions workflows from an
+organization's `.github` repository. A project repository must define its own
+workflow or explicitly call a reusable workflow. The current workflows are:
 
-| Workflow | What it does |
-|----------|-------------|
-| `lint.yml` | Ruff linting (style, imports, type hints) |
-| `secret-scan.yml` | GitLeaks secret scanning (full history) |
-| `license-check.yml` | License header validation |
-| `stale.yml` | Auto-label and close stale issues/PRs |
-| `welcome.yml` | Welcome message for first-time contributors |
+| Workflow | What it checks or does |
+|----------|------------------------|
+| `tests.yml` | Repository tests for links, templates, and YAML structure |
+| `lint.yml` | Ruff linting when Python files are present |
+| `secret-scan.yml` | Gitleaks scanning of the repository history |
+| `license-check.yml` | Presence of a supported root-level license file |
+| `stale.yml` | Marks inactive issues and pull requests as stale |
+| `welcome.yml` | Greets first-time issue and pull-request contributors |
 
 ## Tests
 

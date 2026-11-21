@@ -25,8 +25,11 @@ python -c "import sys; sys.path.append('tests'); import test_smoke, test_templat
 
 ## Adding or Editing Workflows
 - Keep workflows focused on repository health, security, and linting.
-- Follow the project constraint: **No automated CI/CD build or testing pipelines**.
-- Test YAML syntax with `tests/test_yaml_structure.py`.
+- Keep automation limited to repository maintenance and validation. Do not add
+  deployment or release pipelines to this community-health repository.
+- Test YAML syntax and workflow structure with `tests/test_yaml_structure.py`.
+- Remember that workflows here run only in this repository; project repositories
+  must explicitly call reusable workflows if they want to share automation.
 
 ## Submitting Pull Requests
 - Use Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, `test:`).
