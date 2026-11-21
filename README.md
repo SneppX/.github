@@ -23,4 +23,5 @@ The workflows in .github/workflows run only in this repository. GitHub does not 
 ## Project repositories
 
 - [SneppX-ALG](https://github.com/SneppX/sneppx-alg)
+- [VSTodo](https://github.com/SneppX/vstodo)
 - [SneppX-OV](https://github.com/SneppX/sneppxov)
