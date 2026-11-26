@@ -25,3 +25,21 @@ The workflows in .github/workflows run only in this repository. GitHub does not 
 - [SneppX-ALG](https://github.com/SneppX/sneppx-alg)
 - [VSTodo](https://github.com/SneppX/vstodo)
 - [SneppX-OV](https://github.com/SneppX/sneppxov)
+
+
+## Automated formatting commits
+
+Project repositories may use formatter automation to prepare changes on dedicated
+`automation/format-<run-id>` branches. These branches are validation candidates;
+they must not silently rewrite the default branch.
+
+Automated formatting commits follow the Conventional Commits style and include
+the affected scope plus a unique run identifier. For example:
+
+- `style(python): apply automated formatting [format-12345]`
+- `style(native,config): normalize source and build files [format-12346]`
+- `style(docs): standardize documentation formatting [format-12347]`
+
+Each formatter run must produce a distinct commit message. A formatter must
+leave its branch available for review, and its commit must pass the repository's
+required checks against that exact commit before it is considered ready to merge.
