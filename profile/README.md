@@ -12,7 +12,7 @@ SneppX builds the open core for trustworthy AI systems: a native C/C++ tensor an
 
 | Project | Description |
 |---|---|
-| [SneppX-ALG](https://github.com/SneppX/sneppx-alg) | Open-source AI framework with a native C/C++ tensor/autograd core, Python bindings, distributed training, quantization, and ten S0–S9 security layers. |
+| [SneppX-ALG](https://github.com/SneppX/sneppx-alg) | Open-source AI framework with a native C/C++ tensor/autograd core, Python bindings, distributed training, quantization, and S0–S9 security layers (maturity varies by layer). |
 | [VSTodo](https://github.com/SneppX/vstodo) | Go-based version-control system exploring Git-compatible local workflows and remote collaboration. |
 | [SneppX-OV](https://github.com/SneppX/sneppxov) | Public project website with source-linked catalogues, architecture notes, and contributor information. |
 | [Organization defaults](https://github.com/SneppX/.github) | Community-health files, issue templates, and the SneppX organization profile. |
@@ -20,7 +20,7 @@ SneppX builds the open core for trustworthy AI systems: a native C/C++ tensor an
 ## Why SneppX
 
 - **Performance you can inspect.** A native C/C++ core with optional accelerator backends, exposed through pip-installable Python bindings.
-- **Security as architecture.** Ten S0–S9 layers cover post-quantum cryptography, memory hardening, obfuscation, monitoring, signed updates, and formal-verification tooling.
+- **Security as architecture.** S0–S9 security layers cover post-quantum cryptography, memory hardening, obfuscation, monitoring, signed updates, and formal-verification tooling; maturity varies by layer — see individual repository status.
 - **Training that works.** Reverse- and higher-order autograd, a PyTorch-familiar functional namespace, distributed parallelism, and quantization paths in one stack.
 - **Honest engineering.** Documentation and tests state the real maturity of each component; alpha means alpha.
 
